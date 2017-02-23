@@ -1,0 +1,155 @@
+/* layout styles */
+html, body, .l-content, .l-main-wrapper, #map {
+    height: 100%;
+}
+
+ body {
+    overflow-x: hidden;
+}
+
+.l-content {
+    padding-left: 0;
+    transition: all 0.5s ease;
+}
+
+.l-main-wrapper {
+    width: 100%;
+    position: absolute;
+    padding: 0px;
+}
+
+.l-content.toggled .l-main-wrapper {
+    position: absolute;
+    margin-right: -300px;
+}
+
+/* cafe list styles */
+.cafes-list {
+    z-index: 1000;
+    position: fixed;
+    left: 300px;
+    width: 0;
+    height: 100%;
+    margin-left: -300px;
+    overflow-y: auto;
+    background: #000;
+    transition: all 0.5s ease;
+}
+
+.l-content.toggled .cafes-list {
+    width: 300px;
+}
+
+.cafes-list__menu-toggle-mobile {
+    margin-left: 15px;
+}
+
+.cafes-list__items {
+    position: absolute;
+    /*top: 0;*/
+    width: 300px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.cafes-list__items li {
+    text-indent: 20px;
+    line-height: 40px;
+}
+
+.cafes-list__items li a {
+    display: block;
+    text-decoration: none;
+    color: #999;
+}
+
+.cafes-list__items li a:hover {
+    text-decoration: none;
+    color: #fff;
+    background: rgba(255,255,255,0.2);
+}
+
+.cafes-list__items li a:active,
+.cafes-list__items li a:focus {
+    text-decoration: none;
+}
+
+.cafes-list__items > .sidebar-search {
+    text-indent: initial;
+    line-height: initial;
+}
+/* menu syles */
+.menu {
+    background: #000;
+    margin: 0;
+}
+
+.menu__title {
+    display: inline-block;
+    color: #999;
+    margin: 0 20px;
+}
+
+.menu__search {
+    vertical-align: top;
+    margin: 2px 0;
+}
+
+.menu__search input {
+    border-radius: 0;
+}
+
+.glyphicon.glyphicon-menu-hamburger {
+    font-size: 35px;
+    color: #999;
+    padding: 5px 15px;
+}
+
+#map {
+    height: calc(100% - 50px);
+}
+
+/* cafe-info */
+.cafe-info {
+    width: 300px;
+}
+
+.cafe-info__image {
+    width: 100px;
+    float: left;
+    margin: 0 10px;
+}
+
+
+@media(min-width:768px) {
+    .l-content {
+        padding-left: 300px;
+    }
+
+    .l-content.toggled {
+        padding-left: 0;
+    }
+
+    .cafes-list {
+        width: 300px;
+    }
+
+    .l-content.toggled .cafes-list {
+        width: 0;
+    }
+
+    .l-main-wrapper {
+        padding: 0px;
+        position: relative;
+    }
+
+    .l-content.toggled .l-main-wrapper {
+        position: relative;
+        margin-right: 0;
+    }
+
+    .cafes-list__menu-toggle-mobile {
+        display: none;
+    }
+}
