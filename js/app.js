@@ -43,9 +43,6 @@ function BrestCafesViewModel() {
 
   this.showInfo = function(cafe) {
     self.InfoWindow.setContent(generateInfoWindow(cafe.elem.venue));
-    // var iw = new google.maps.InfoWindow({
-    //   content: generateInfoWindow(cafe.elem.venue)
-    // });
     self.InfoWindow.open(self.map, cafe.marker);
     animateMarker(cafe.marker);
   };
